@@ -1,0 +1,1 @@
+uglifyjs zepto.js -c -m -o zepto.min.js
