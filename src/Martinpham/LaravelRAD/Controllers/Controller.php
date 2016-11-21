@@ -9,7 +9,7 @@
 namespace Martinpham\LaravelRAD\Controllers;
 
 
-use App\RAD\Exceptions\CouldNotMakeDirectoryException;
+use Martinpham\LaravelRAD\Exceptions\CouldNotMakeDirectoryException;
 use Illuminate\Contracts\Routing\ResponseFactory;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Foundation\Bus\DispatchesJobs;

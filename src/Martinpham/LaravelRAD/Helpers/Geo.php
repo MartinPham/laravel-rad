@@ -2,7 +2,7 @@
 namespace Martinpham\LaravelRAD\Helpers;
 
 
-use App\RAD\Exceptions\InvalidModelClass;
+use Martinpham\LaravelRAD\Exceptions\InvalidModelClass;
 
 class Geo
 {

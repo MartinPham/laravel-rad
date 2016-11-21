@@ -10,7 +10,7 @@ namespace Martinpham\LaravelRAD\Models;
 
 
 
-use App\RAD\Exceptions\InvalidOauthUserId;
+use Martinpham\LaravelRAD\Exceptions\InvalidOauthUserId;
 
 trait Oauth
 {

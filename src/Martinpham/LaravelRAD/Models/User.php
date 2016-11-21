@@ -10,7 +10,7 @@ namespace Martinpham\LaravelRAD\Models;
 
 
 use App\Http\Controllers\API\Controller;
-use App\RAD\Exceptions\InvalidActivateToken;
+use Martinpham\LaravelRAD\Exceptions\InvalidActivateToken;
 use Illuminate\Auth\Authenticatable;
 use Illuminate\Auth\Passwords\CanResetPassword;
 use Illuminate\Foundation\Auth\Access\Authorizable;

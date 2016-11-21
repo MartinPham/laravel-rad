@@ -8,8 +8,8 @@
 
 namespace Martinpham\LaravelRAD\Controllers\ACP;
 
-use App\RAD\Models\Area;
-use App\RAD\Exceptions\CouldNotMakeDirectoryException;
+use Martinpham\LaravelRAD\Models\Area;
+use Martinpham\LaravelRAD\Exceptions\CouldNotMakeDirectoryException;
 use App\User;
 use Illuminate\Contracts\Auth\Guard as AuthGuard;
 use Illuminate\Contracts\Config\Repository as ConfigRepository;

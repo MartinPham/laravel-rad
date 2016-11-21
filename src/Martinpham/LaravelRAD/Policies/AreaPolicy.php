@@ -2,7 +2,7 @@
 
 namespace Martinpham\LaravelRAD\Policies;
 
-use App\RAD\Models\Area;
+use Martinpham\LaravelRAD\Models\Area;
 use App\User;
 use Illuminate\Auth\Access\HandlesAuthorization;
 

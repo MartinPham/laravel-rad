@@ -9,8 +9,8 @@
 namespace Martinpham\LaravelRAD\Controllers\API;
 
 
-use App\RAD\Exceptions\InvalidActivateToken;
-use App\RAD\Exceptions\InvalidResetToken;
+use Martinpham\LaravelRAD\Exceptions\InvalidActivateToken;
+use Martinpham\LaravelRAD\Exceptions\InvalidResetToken;
 
 trait AuthController
 {

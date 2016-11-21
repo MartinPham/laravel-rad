@@ -2,7 +2,7 @@
 
 namespace Martinpham\LaravelRAD\Providers\SocialiteProviders\Facebook;
 
-use App\RAD\Exceptions\CouldNotExtendSocialiteException;
+use Martinpham\LaravelRAD\Exceptions\CouldNotExtendSocialiteException;
 use SocialiteProviders\Manager\Exception\InvalidArgumentException;
 use SocialiteProviders\Manager\SocialiteWasCalled;
 

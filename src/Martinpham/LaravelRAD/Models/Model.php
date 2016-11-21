@@ -8,8 +8,8 @@
 
 namespace Martinpham\LaravelRAD\Models;
 
-use App\RAD\Exceptions\InvalidForeignField;
-use App\RAD\Exceptions\InvalidForeignObject;
+use Martinpham\LaravelRAD\Exceptions\InvalidForeignField;
+use Martinpham\LaravelRAD\Exceptions\InvalidForeignObject;
 use Carbon\Carbon;
 use MongoDB\BSON\ObjectID;
 
