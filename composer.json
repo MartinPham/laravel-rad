@@ -1,0 +1,28 @@
+{
+    "name": "martinpham/laravel-rad",
+    "description": "Laravel RAD components",
+    "keywords": ["laravel","rad"],
+    "homepage": "https://github.com/MartinPham/laravel-rad",
+    "authors": [
+        {
+            "name": "Martin Pham",
+            "homepage": "http://martinpham.com"
+        }
+    ],
+    "license" : "MIT",
+    "require": {
+    },
+    "require-dev": {
+    },
+    "autoload": {
+        "psr-0": {
+            "Martinpham\\LaravelRAD": "src/",
+        }
+    },
+    "autoload-dev": {
+        "classmap": [
+        ]
+    },
+    "suggest": {
+    }
+}
