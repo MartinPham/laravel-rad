@@ -25,32 +25,32 @@ Route::group(array(
     Route::any('/items', 'DataController@items')->name('.items');
 });
 
-///*
-// * Auth
-// */
-//Route::group(array(
-//    'prefix' => '/auth',
-//    'as' => '.auth'
-//), function () {
-//    Route::any('/register', 'AuthController@register')->name('.register');
-//    Route::any('/forceActivate/{email}', 'AuthController@forceActivate')->name('.forceActivate#');
-//    Route::any('/activate/{user_id}/{token}', 'AuthController@activate')->name('.activate@');
-//
-//    Route::any('/reactivate', 'AuthController@reactivate')->name('.reactivate');
-//
-//    Route::any('/requestPassword', 'AuthController@requestPassword')->name('.requestPassword');
-//    Route::any('/resetPassword/{user_id}/{token}', 'AuthController@resetPassword')->name('.resetPassword#');
-//    Route::any('/updatePassword', 'AuthController@updatePassword')->name('.updatePassword');
-//
-//    Route::any('/login', 'AuthController@login')->name('.login');
-//    Route::any('/logout', 'AuthController@logout')->name('.logout');
-//    Route::any('/tokenLogin', 'AuthController@tokenLogin')->name('.tokenLogin');
-//
-//    Route::any('/oauthLogin/{service}', 'OauthController@oauthLogin')->name('.oauthLogin@');
-//    Route::any('/oauthLoginCallback/{service}', 'OauthController@oauthLoginCallback')->name('.oauthLoginCallback@');
-//
-//    Route::any('/oauth2TokenLogin/{service}', 'OauthController@oauth2TokenLogin')->name('.oauth2TokenLogin');
-//});
+/*
+* Auth
+*/
+Route::group(array(
+   'prefix' => '/auth',
+   'as' => '.auth'
+), function () {
+   Route::any('/register', 'AuthController@register')->name('.register');
+   Route::any('/forceActivate/{email}', 'AuthController@forceActivate')->name('.forceActivate#');
+   Route::any('/activate/{user_id}/{token}', 'AuthController@activate')->name('.activate@');
+
+   Route::any('/reactivate', 'AuthController@reactivate')->name('.reactivate');
+
+   Route::any('/requestPassword', 'AuthController@requestPassword')->name('.requestPassword');
+   Route::any('/resetPassword/{user_id}/{token}', 'AuthController@resetPassword')->name('.resetPassword#');
+   Route::any('/updatePassword', 'AuthController@updatePassword')->name('.updatePassword');
+
+   Route::any('/login', 'AuthController@login')->name('.login');
+   Route::any('/logout', 'AuthController@logout')->name('.logout');
+   Route::any('/tokenLogin', 'AuthController@tokenLogin')->name('.tokenLogin');
+
+   Route::any('/oauthLogin/{service}', 'OauthController@oauthLogin')->name('.oauthLogin@');
+   Route::any('/oauthLoginCallback/{service}', 'OauthController@oauthLoginCallback')->name('.oauthLoginCallback@');
+
+   Route::any('/oauth2TokenLogin/{service}', 'OauthController@oauth2TokenLogin')->name('.oauth2TokenLogin');
+});
 
 
 
