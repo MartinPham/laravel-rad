@@ -44,6 +44,8 @@ class LaravelRADServiceProvider extends ServiceProvider
 
         $this->publishes([
             __DIR__.'/../../../app/Providers/RouteServiceProvider.php' => app_path('Providers/RouteServiceProvider.php'),
+            __DIR__.'/../../../app/Providers/EventServiceProvider.php' => app_path('Providers/EventServiceProvider.php'),
+            __DIR__.'/../../../app/Providers/AuthServiceProvider.php' => app_path('Providers/AuthServiceProvider.php'),
             __DIR__.'/../../../app/Model.php' => app_path('Model.php'),
             __DIR__.'/../../../app/Oauth.php' => app_path('Oauth.php'),
             __DIR__.'/../../../app/User.php' => app_path('User.php'),
