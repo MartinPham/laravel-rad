@@ -46,6 +46,7 @@ class LaravelRADServiceProvider extends ServiceProvider
             __DIR__.'/../../../app/Model.php' => app_path('Model.php'),
             __DIR__.'/../../../app/Oauth.php' => app_path('Oauth.php'),
             __DIR__.'/../../../app/User.php' => app_path('User.php'),
+            __DIR__.'/../../../app/Item.php' => app_path('Item.php'),
             __DIR__.'/../../../app/Http/Kernel.php' => app_path('Http/Kernel.php'),
             __DIR__.'/../../../app/Http/Controllers' => app_path('Http/Controllers'),
         ], 'app');
