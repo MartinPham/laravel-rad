@@ -46,7 +46,8 @@ class LaravelRADServiceProvider extends ServiceProvider
         $this->publishes([
             __DIR__.'/../../../gulp/css' => base_path('gulp/css'),
             __DIR__.'/../../../gulp/js' => base_path('gulp/js'),
-            __DIR__.'/../../../gulp/gulpfile.js' => base_path('gulp/package.json'),
+            __DIR__.'/../../../gulp/gulpfile.js' => base_path('gulp/gulpfile.js'),
+            __DIR__.'/../../../gulp/package.json' => base_path('gulp/package.json'),
         ], 'gulp');
 
         $this->publishes([
