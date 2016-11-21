@@ -44,6 +44,10 @@ class LaravelRADServiceProvider extends ServiceProvider
         ], 'route');
 
         $this->publishes([
+            __DIR__.'/../../../gulp' => base_path('gulp'),
+        ], 'gulp');
+
+        $this->publishes([
             __DIR__.'/../../../app/Providers/RouteServiceProvider.php' => app_path('Providers/RouteServiceProvider.php'),
             __DIR__.'/../../../app/Providers/EventServiceProvider.php' => app_path('Providers/EventServiceProvider.php'),
             __DIR__.'/../../../app/Providers/AuthServiceProvider.php' => app_path('Providers/AuthServiceProvider.php'),
