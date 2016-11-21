@@ -2,17 +2,14 @@
 
 
 
-use App\Club;
-use App\Geo;
-use App\Image;
-use App\UserItemCategory;
+use App\Item;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Input;
 
 class DataController extends Controller {
-    public function images()
+    public function items()
     {
-        $this->data = Image::orderBy('idx', 'desc')->orderBy('created_at', 'desc')->get();
+        $this->data = Item::orderBy('created_at', 'desc')->get();
 
         return $this->respond();
     }
