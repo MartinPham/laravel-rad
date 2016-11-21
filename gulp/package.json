@@ -1,0 +1,17 @@
+{
+  "name": "Furnax",
+  "version": "1.0.0",
+  "description": "State of the art cross-platform HTML5 Apps",
+  "main": "index.html",
+  "author": "Fornace srl",
+  "window": {
+    "toolbar": false,
+    "frame": false,
+    "icon": "icon.png",
+    "fullscreen": false,
+    "width": 1000,
+    "height": 700
+  },
+  "license": "Fornace srl 2015",
+  "chromium-args": "--ignore-certificate-errors"
+}
