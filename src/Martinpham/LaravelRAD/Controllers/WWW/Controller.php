@@ -10,6 +10,7 @@ namespace Martinpham\LaravelRAD\Controllers\WWW;
 
 use Illuminate\Contracts\Routing\ResponseFactory;
 use Illuminate\Http\Request;
+use Illuminate\Contracts\Auth\Guard as AuthGuard;
 
 trait Controller
 {
