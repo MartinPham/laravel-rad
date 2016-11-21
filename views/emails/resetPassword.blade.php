@@ -1,0 +1,1 @@
+<a href="{{ route('api.v1.auth.resetPassword#', ['user_id' => $user->id, 'token' => $user->getAPIAuthToken()]) }}">Clicca qui</a> per reimpostare la tua password.<br/>
