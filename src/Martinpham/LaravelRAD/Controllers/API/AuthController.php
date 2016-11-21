@@ -14,7 +14,7 @@ use Martinpham\LaravelRAD\Exceptions\InvalidResetToken;
 
 trait AuthController
 {
-    public function register()
+    public function register(\Illuminate\Contracts\Hashing\Hasher $hasher)
     {
         $rules = array(
             'name' => 'required|min:1',
@@ -24,7 +24,7 @@ trait AuthController
             'password' => 'required|min:1',
         );
 
-        $input = Input::only(
+        $input = $this->request->only(
             'name',
             'surname',
             
@@ -46,7 +46,7 @@ trait AuthController
         }
 
         $input['email'] = strtolower($input['email']);
-        $input['password'] = Hash::make($input['password']);
+        $input['password'] = $hasher->make($input['password']);
 
         $user = User::create($input);
 
@@ -107,7 +107,7 @@ trait AuthController
             'password' => 'required|min:1'
         );
 
-        $input = Input::only(
+        $input = $this->request->only(
             'email',
             'password'
         );
@@ -148,7 +148,7 @@ trait AuthController
             'email' => 'required|email|exists:users,email'
         );
 
-        $input = Input::only(
+        $input = $this->request->only(
             'email'
         );
 
@@ -181,7 +181,7 @@ trait AuthController
             'email' => 'required|email|exists:users,email'
         );
 
-        $input = Input::only(
+        $input = $this->request->only(
             'email'
         );
 
@@ -228,14 +228,14 @@ trait AuthController
         return view('soft_redirect', ['url' => \Config::get('app.app_url') . 'reset_password?token=' . $user->getAPIAuthToken()]);
     }
 
-    public function updatePassword()
+    public function updatePassword(\Illuminate\Contracts\Hashing\Hasher $hasher)
     {
         $rules = array(
             'token' => 'required',
             'password' => 'required',
         );
 
-        $input = Input::only(
+        $input = $this->request->only(
             'token',
             'password'
         );
@@ -260,7 +260,7 @@ trait AuthController
 
 
 
-        $user->password = Hash::make($input['password']);
+        $user->password = $hasher->make($input['password']);
         $user->save();
 
 
