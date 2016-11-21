@@ -33,9 +33,8 @@
             <table class="table table-vcenter table-striped">
                 <thead>
                 <tr>
-                    <th style="width: 20%;">Image</th>
+                    <th style="width: 20%;">Photo</th>
                     <th style="width: 20%;">Name</th>
-                    <th style="width: 20%;">Order</th>
                     <th style="width: 50%;" class="text-center"></th>
                 </tr>
                 </thead>
@@ -44,7 +43,6 @@
                     <tr data-id="{{ $i->id }}">
                         <td><img src="{{ $i->photo }}" width="100" /></td>
                         <td>{{ $i->name }}</td>
-                        <td>{{ @$i->idx }}</td>
                         <td class="text-right">
                             <div class="btn-group btn-group-sm">
                                 <a href="{{ route($routeId . '.update', [ 'id' => $i->id]) }}" data-toggle="tooltip" class="btn btn-info"><i class="fa fa-pencil"> &nbsp; <b>Edit</b> &nbsp; </i></a>
