@@ -8,7 +8,7 @@
 
 namespace Martinpham\LaravelRAD\Controllers\API;
 
-
+use App\User;
 use Martinpham\LaravelRAD\Exceptions\InvalidActivateToken;
 use Martinpham\LaravelRAD\Exceptions\InvalidResetToken;
 
@@ -51,6 +51,7 @@ trait AuthController
         $user = User::create($input);
 
         $user->updateAvatar(@$input['avatar']);
+        $user->activated = false;
 
         $user->sendActivationEmail();
 

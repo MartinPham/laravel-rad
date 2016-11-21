@@ -23,6 +23,7 @@ class ACPSeeder extends Seeder
             'password'      => \Illuminate\Support\Facades\Hash::make('furnax3b'),
 
             'role'          => 'root',
+            'activated'          => true
         ]);
 
         \App\User::create([
@@ -32,6 +33,7 @@ class ACPSeeder extends Seeder
             'password'      => \Illuminate\Support\Facades\Hash::make('admin'),
 
             'role'          => 'admin',
+            'activated'          => true
         ]);
     }
 }

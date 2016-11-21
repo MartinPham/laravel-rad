@@ -106,7 +106,7 @@ trait Controller
         if(count($input) === 0){
             return true;
         }
-        $validator = Validator::make($input, $rules);
+        $validator = \Validator::make($input, $rules);
         $returns = [];
 
         if($validator->fails())
