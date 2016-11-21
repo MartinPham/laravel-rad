@@ -8,23 +8,23 @@
     <div class="content-header">
         <div class="header-section">
             <h1>
-                <i class="fa fa-files-o"></i>Image
+                <i class="fa fa-files-o"></i>Item
                 <br>
                 <small>List</small>
             </h1>
         </div>
     </div>
-    <ul class="breadcrumb breadcrumb-top">
+    <!-- <ul class="breadcrumb breadcrumb-top">
         <li>Image</li>
         <li>List</li>
-    </ul>
+    </ul> -->
     <!-- END Table Responsive Header -->
 
 
     <!-- Responsive Full Block -->
     <div class="block">
         <div class="form-group">
-            <a href="{{ route('acp.image.create') }}" data-toggle="tooltip"  class="btn btn-primary"><i class="fa fa-plus"> &nbsp; <b>New</b> &nbsp; </i></a>
+            <a href="{{ route($routeId . '.create') }}" data-toggle="tooltip"  class="btn btn-primary"><i class="fa fa-plus"> &nbsp; <b>New</b> &nbsp; </i></a>
 
 
         </div>
@@ -47,9 +47,9 @@
                         <td>{{ @$i->idx }}</td>
                         <td class="text-right">
                             <div class="btn-group btn-group-sm">
-                                <a href="{{ route('acp.image.update', [ 'id' => $i->id]) }}" data-toggle="tooltip" class="btn btn-info"><i class="fa fa-pencil"> &nbsp; <b>Edit</b> &nbsp; </i></a>
+                                <a href="{{ route($routeId . '.update', [ 'id' => $i->id]) }}" data-toggle="tooltip" class="btn btn-info"><i class="fa fa-pencil"> &nbsp; <b>Edit</b> &nbsp; </i></a>
 
-                                <a onclick="confirmDelete('{{ route('acp.image.delete', [ 'id' => $i->id]) }}')" data-toggle="tooltip" class="btn btn-danger"><i class="fa fa-times"> &nbsp; <b>Delete</b> &nbsp; </i></a>
+                                <a onclick="confirmDelete('{{ route($routeId . '.delete', [ 'id' => $i->id]) }}')" data-toggle="tooltip" class="btn btn-danger"><i class="fa fa-times"> &nbsp; <b>Delete</b> &nbsp; </i></a>
                             </div>
                         </td>
                     </tr>

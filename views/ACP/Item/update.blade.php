@@ -9,7 +9,7 @@
     <div class="content-header">
         <div class="header-section">
             <h1>
-                <i class="fa fa-files-o"></i>Image
+                <i class="fa fa-files-o"></i>Item
                 <br>
                 <small>{{ (@$item)?"Edit":"Add" }} </small>
             </h1>
@@ -55,36 +55,14 @@
                         {!! Form::text('name', old('name', @$item->name), ['class' => 'form-control', 'required' => 'true']) !!}
                     </div>
                 </div>
-
-                <div class="form-group">
-                    <label class="col-md-2 control-label">Order (DESC)</label>
-
-                    <div class="col-md-10">
-                        {!! Form::text('idx', old('idx', @$item->idx), ['class' => 'form-control', 'required' => 'true']) !!}
-                    </div>
-                </div>
                 <div class="form-group">
                     <label class="col-md-2 control-label">Photo</label>
 
                     <div class="col-md-10">
-                        {!! Form::text('photo', old('photo', @$item->photo),  ['class' => 'form-control xfile-picker', 'xrequired' => 'true', 'data-preview' => @$item->photo ? : '']) !!}
+                        {!! Form::text('photo', old('photo', @$item->photo),  ['class' => 'form-control file-picker', 'xrequired' => 'true', 'data-preview' => @$item->photo ? : '']) !!}
                     </div>
                 </div>
-                <div class="form-group">
-                    <label class="col-md-2 control-label">Lat</label>
-
-                    <div class="col-md-10">
-                        {!! Form::text('lat', old('lat', @$item->geometry['location']['lat']),  ['class' => 'form-control', 'required' => 'true']) !!}
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label class="col-md-2 control-label">Lng</label>
-
-                    <div class="col-md-10">
-                        {!! Form::text('lng', old('lng', @$item->geometry['location']['lng']),  ['class' => 'form-control', 'required' => 'true']) !!}
-                    </div>
-                </div>
-
+                
 
                 <div class="form-group">
                     <div class="text-center">

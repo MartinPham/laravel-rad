@@ -26,19 +26,19 @@ Route::group(
     function () {
 
         /*
-         * ACP Image
+         * ACP Item
          */
         Route::group(array(
-            'prefix' => '/image',
-            'as' => '.image'
+            'prefix' => '/item',
+            'as' => '.item'
         ), function () {
-            Route::any('/', 'ImageController@index')->name('');
-            Route::get('/create', 'ImageController@create')->name('.create');
-            Route::post('/create', 'ImageController@create_post')->name('.create_post');
-            Route::any('/{id}/read', 'ImageController@read')->name('.read');
-            Route::get('/{id}/update', 'ImageController@update')->name('.update');
-            Route::post('/{id}/update', 'ImageController@update_post')->name('.update_post');
-            Route::any('/{id}/delete', 'ImageController@delete')->name('.delete');
+            Route::any('/', 'ItemController@index')->name('');
+            Route::get('/create', 'ItemController@create')->name('.create');
+            Route::post('/create', 'ItemController@create_post')->name('.create_post');
+            Route::any('/{id}/read', 'ItemController@read')->name('.read');
+            Route::get('/{id}/update', 'ItemController@update')->name('.update');
+            Route::post('/{id}/update', 'ItemController@update_post')->name('.update_post');
+            Route::any('/{id}/delete', 'ItemController@delete')->name('.delete');
         });
 
         /*
