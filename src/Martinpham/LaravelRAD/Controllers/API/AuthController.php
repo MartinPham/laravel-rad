@@ -19,8 +19,6 @@ trait AuthController
         $rules = array(
             'name' => 'required|min:1',
             'surname' => 'required|min:1',
-            'username' => 'required|min:1',
-            'fig' => 'required|min:1',
             'email' => 'required|min:1',
 //			'email' => 'required|email|unique:users',
             'password' => 'required|min:1',
@@ -29,8 +27,7 @@ trait AuthController
         $input = Input::only(
             'name',
             'surname',
-            'username',
-            'fig',
+            
             'email',
             'password',
             'avatar'
@@ -49,7 +46,6 @@ trait AuthController
         }
 
         $input['email'] = strtolower($input['email']);
-        $input['username'] = strtolower($input['username']);
         $input['password'] = Hash::make($input['password']);
 
         $user = User::create($input);

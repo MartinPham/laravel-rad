@@ -87,8 +87,6 @@ trait Oauth
             $user->avatar = $oAuthUserData->avatar;
 
             // extra info
-            $user->username = $oAuthUserData->id . '-' . $service;
-            $user->fig = '';
 
             $user->save();
 

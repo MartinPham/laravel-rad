@@ -22,7 +22,7 @@ Route::group(array(
     'prefix' => '/data',
     'as' => '.data'
 ), function () {
-    Route::any('/images', 'DataController@images')->name('.images');
+    Route::any('/items', 'DataController@items')->name('.items');
 });
 
 ///*
