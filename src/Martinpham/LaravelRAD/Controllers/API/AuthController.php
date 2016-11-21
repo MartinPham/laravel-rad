@@ -48,10 +48,22 @@ trait AuthController
         $input['email'] = strtolower($input['email']);
         $input['password'] = $hasher->make($input['password']);
 
+        $check = User::findByEmail($input['email']);
+        if($check)
+        {
+            return $this->respond(array(
+                'ok'    =>  false,
+                'msg'   =>  'Email has been used',
+                'error' =>  $errors,
+            ));
+        }
+
         $user = User::create($input);
 
         $user->updateAvatar(@$input['avatar']);
+
         $user->activated = false;
+        $user->save();
 
         $user->sendActivationEmail();
 
@@ -136,9 +148,12 @@ trait AuthController
 
 
 //		$this->data = $user;
-        self::updateToken(self::generateToken($user));
+        $token = self::generateToken($user);
+        $this->user = $user;
+        $this->auth = $token;
+        self::updateToken($token);
 
-//		dd($user);
+		// dd($user);
         return $this->respond();
     }
 

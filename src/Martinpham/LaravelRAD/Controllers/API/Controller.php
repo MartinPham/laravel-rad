@@ -163,13 +163,14 @@ trait Controller
 
     public static function updateToken($token)
     {
-        self::getInstance()->request->replace(['token' => $token]);
+        self::sharedInstance()->request->replace(['token' => $token]);
 //        Input::replace(array());
 //        \JWTAuth::setToken($token);
     }
 
     public static function user()
     {
+        // dd(\JWTAuth::setToken(self::sharedInstance()->request->get('token'))->authenticate());
         /*
         $auth = Input::get('auth');
         if (!$auth) {
