@@ -1,4 +1,4 @@
-# Laravel rad components
+# Laravel RAD components
 
 - MongoDB
 - View with helpers
