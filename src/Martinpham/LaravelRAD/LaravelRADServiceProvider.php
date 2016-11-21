@@ -55,7 +55,7 @@ class LaravelRADServiceProvider extends ServiceProvider
         ], 'database');
         
         $this->publishes([
-            __DIR__.'/../../../.env' => base_path('.env'),
+            __DIR__.'/../../../.env' => base_path('.env.rad'),
         ], 'env');
     }
 
