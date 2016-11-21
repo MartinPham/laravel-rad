@@ -49,6 +49,10 @@ class LaravelRADServiceProvider extends ServiceProvider
             __DIR__.'/../../../app/Http/Kernel.php' => app_path('Http/Kernel.php'),
             __DIR__.'/../../../app/Http/Controllers' => app_path('Http/Controllers'),
         ], 'app');
+
+        $this->publishes([
+            __DIR__.'/../../../database/seeds' => database_path('seeds'),
+        ], 'database');
         
         $this->publishes([
             __DIR__.'/../../../.env' => base_path('.env'),
