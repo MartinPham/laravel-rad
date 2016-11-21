@@ -33,3 +33,11 @@ update .env.rad -> .env
 ```
 php artisan db:seed
 ```
+
+```
+npm install -g gulp gulp-concat gulp-uglify gulp-notify gulp-util gulp-minify-css gulp-connect gulp-autoprefixer
+```
+
+```
+npm link gulp gulp-concat gulp-uglify gulp-notify gulp-util gulp-minify-css gulp-connect gulp-autoprefixer
+```
