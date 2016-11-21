@@ -24,6 +24,7 @@ class LaravelRADServiceProvider extends ServiceProvider
 
         $this->publishes([
             __DIR__.'/../../../views/ACP' => resource_path('views/ACP'),
+            __DIR__.'/../../../views/WWW' => resource_path('views/WWW'),
             __DIR__.'/../../../views/emails/activateUser.blade.php' => resource_path('views/emails/activateUser.blade.php'),
             __DIR__.'/../../../views/emails/resetPassword.blade.php' => resource_path('views/emails/resetPassword.blade.php'),
             __DIR__.'/../../../views/includes/ACP' => resource_path('views/includes/ACP'),
