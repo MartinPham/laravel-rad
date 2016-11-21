@@ -31,10 +31,10 @@ class LaravelRADServiceProvider extends ServiceProvider
         ], 'views');
 
         $this->publishes([
-            __DIR__.'/../../../public/assets' => public_path('public/assets'),
-            __DIR__.'/../../../public/build' => public_path('public/build'),
-            __DIR__.'/../../../public/vendor' => public_path('public/vendor'),
-            __DIR__.'/../../../public/home.html' => public_path('public/home.html'),
+            __DIR__.'/../../../public/assets' => public_path('assets'),
+            __DIR__.'/../../../public/build' => public_path('build'),
+            __DIR__.'/../../../public/vendor' => public_path('vendor'),
+            __DIR__.'/../../../public/home.html' => public_path('home.html'),
         ], 'public');
 
         $this->publishes([
