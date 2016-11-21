@@ -16,7 +16,7 @@
     },
     "autoload": {
         "psr-0": {
-            "Martinpham\\LaravelRAD": "src/",
+            "Martinpham\\LaravelRAD": "src/"
         }
     },
     "autoload-dev": {
