@@ -1,4 +1,11 @@
-# laravel rad components
+# Laravel rad components
+
+- MongoDB
+- View with helpers
+- Controller with helpers
+- ACP with Auth, Recaptcha, S3, CRUD example
+- API with Auth, JWT, JSON Error handle, Timezone handle
+- Auth with Oauth
 
 ```
 laravel new App
