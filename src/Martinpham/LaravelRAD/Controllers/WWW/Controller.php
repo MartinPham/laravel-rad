@@ -8,6 +8,8 @@
 
 namespace Martinpham\LaravelRAD\Controllers\WWW;
 
+use Illuminate\Contracts\Routing\ResponseFactory;
+use Illuminate\Http\Request;
 
 trait Controller
 {
