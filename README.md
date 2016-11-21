@@ -1,7 +1,11 @@
 # laravel rad components
 
 ```
-laravel new Blog
+laravel new App
+```
+
+```
+cd App
 ```
 
 ```
