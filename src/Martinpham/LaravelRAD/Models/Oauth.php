@@ -6,7 +6,7 @@
  * Time: 15:25
  */
 
-namespace App\RAD\Models;
+namespace Martinpham\LaravelRAD\Models;
 
 
 

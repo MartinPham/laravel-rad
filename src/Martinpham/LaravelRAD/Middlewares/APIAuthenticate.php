@@ -1,4 +1,4 @@
-<?php namespace App\RAD\Middlewares;
+<?php namespace Martinpham\LaravelRAD\Middlewares;
 
 
 

@@ -6,7 +6,7 @@
  * Time: 15:36
  */
 
-namespace App\RAD\Controllers\API;
+namespace Martinpham\LaravelRAD\Controllers\API;
 
 
 trait OauthController

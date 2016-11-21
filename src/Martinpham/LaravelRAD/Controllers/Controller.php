@@ -6,7 +6,7 @@
  * Time: 15:11
  */
 
-namespace App\RAD\Controllers;
+namespace Martinpham\LaravelRAD\Controllers;
 
 
 use App\RAD\Exceptions\CouldNotMakeDirectoryException;

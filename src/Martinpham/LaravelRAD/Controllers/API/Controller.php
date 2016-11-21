@@ -6,7 +6,7 @@
  * Time: 15:11
  */
 
-namespace App\RAD\Controllers\API;
+namespace Martinpham\LaravelRAD\Controllers\API;
 
 
 

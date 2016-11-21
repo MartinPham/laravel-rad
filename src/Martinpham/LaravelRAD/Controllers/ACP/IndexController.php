@@ -6,7 +6,7 @@
  * Time: 15:34
  */
 
-namespace App\RAD\Controllers\ACP;
+namespace Martinpham\LaravelRAD\Controllers\ACP;
 
 
 trait IndexController

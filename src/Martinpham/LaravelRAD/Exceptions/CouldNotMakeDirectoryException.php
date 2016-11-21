@@ -6,7 +6,7 @@
  * Time: 11:45
  */
 
-namespace App\RAD\Exceptions;
+namespace Martinpham\LaravelRAD\Exceptions;
 
 
 class CouldNotMakeDirectoryException extends \Exception

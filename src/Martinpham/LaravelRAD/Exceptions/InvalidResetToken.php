@@ -6,7 +6,7 @@
  * Time: 15:55
  */
 
-namespace App\RAD\Exceptions;
+namespace Martinpham\LaravelRAD\Exceptions;
 
 
 class InvalidResetToken extends \Exception

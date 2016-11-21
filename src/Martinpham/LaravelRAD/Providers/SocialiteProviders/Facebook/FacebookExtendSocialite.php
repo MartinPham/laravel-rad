@@ -1,6 +1,6 @@
 <?php
 
-namespace App\RAD\Providers\SocialiteProviders\Facebook;
+namespace Martinpham\LaravelRAD\Providers\SocialiteProviders\Facebook;
 
 use App\RAD\Exceptions\CouldNotExtendSocialiteException;
 use SocialiteProviders\Manager\Exception\InvalidArgumentException;

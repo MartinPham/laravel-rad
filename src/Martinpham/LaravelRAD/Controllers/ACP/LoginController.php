@@ -6,7 +6,7 @@
  * Time: 15:17
  */
 
-namespace App\RAD\Controllers\ACP;
+namespace Martinpham\LaravelRAD\Controllers\ACP;
 
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 

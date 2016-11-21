@@ -6,7 +6,7 @@
  * Time: 15:12
  */
 
-namespace App\RAD\Models;
+namespace Martinpham\LaravelRAD\Models;
 
 use App\RAD\Exceptions\InvalidForeignField;
 use App\RAD\Exceptions\InvalidForeignObject;

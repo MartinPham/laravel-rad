@@ -6,7 +6,7 @@
  * Time: 15:56
  */
 
-namespace App\RAD\Exceptions;
+namespace Martinpham\LaravelRAD\Exceptions;
 
 
 class InvalidModelClass extends \Exception

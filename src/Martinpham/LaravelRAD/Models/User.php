@@ -6,7 +6,7 @@
  * Time: 15:13
  */
 
-namespace App\RAD\Models;
+namespace Martinpham\LaravelRAD\Models;
 
 
 use App\Http\Controllers\API\Controller;

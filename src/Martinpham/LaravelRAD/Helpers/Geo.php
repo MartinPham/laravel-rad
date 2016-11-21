@@ -1,5 +1,5 @@
 <?php
-namespace App\RAD\Helpers;
+namespace Martinpham\LaravelRAD\Helpers;
 
 
 use App\RAD\Exceptions\InvalidModelClass;

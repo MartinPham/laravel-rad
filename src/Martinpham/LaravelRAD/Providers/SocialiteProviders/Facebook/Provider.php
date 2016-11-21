@@ -1,6 +1,6 @@
 <?php
 
-namespace App\RAD\Providers\SocialiteProviders\Facebook;
+namespace Martinpham\LaravelRAD\Providers\SocialiteProviders\Facebook;
 
 use GuzzleHttp\ClientInterface;
 use Illuminate\Support\Arr;

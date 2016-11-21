@@ -6,7 +6,7 @@
  * Time: 15:57
  */
 
-namespace App\RAD\Exceptions;
+namespace Martinpham\LaravelRAD\Exceptions;
 
 
 class InvalidForeignField extends \Exception

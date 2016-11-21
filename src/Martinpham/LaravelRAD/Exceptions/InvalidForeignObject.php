@@ -6,7 +6,7 @@
  * Time: 15:58
  */
 
-namespace App\RAD\Exceptions;
+namespace Martinpham\LaravelRAD\Exceptions;
 
 
 class InvalidForeignObject extends \Exception

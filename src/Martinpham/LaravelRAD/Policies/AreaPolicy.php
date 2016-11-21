@@ -1,6 +1,6 @@
 <?php
 
-namespace App\RAD\Policies;
+namespace Martinpham\LaravelRAD\Policies;
 
 use App\RAD\Models\Area;
 use App\User;

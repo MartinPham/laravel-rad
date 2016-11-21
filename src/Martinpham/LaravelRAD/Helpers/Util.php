@@ -6,7 +6,7 @@
  * Time: 12:50
  */
 
-namespace App\RAD\Helpers;
+namespace Martinpham\LaravelRAD\Helpers;
 
 
 class Util

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\RAD\Middlewares;
+namespace Martinpham\LaravelRAD\Middlewares;
 
 use Closure;
 use Illuminate\Contracts\Auth\Guard;

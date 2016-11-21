@@ -6,7 +6,7 @@
  * Time: 15:12
  */
 
-namespace App\RAD\Controllers\WWW;
+namespace Martinpham\LaravelRAD\Controllers\WWW;
 
 
 trait Controller

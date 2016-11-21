@@ -6,7 +6,7 @@
  * Time: 15:11
  */
 
-namespace App\RAD\Controllers\ACP;
+namespace Martinpham\LaravelRAD\Controllers\ACP;
 
 use App\RAD\Models\Area;
 use App\RAD\Exceptions\CouldNotMakeDirectoryException;
