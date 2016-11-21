@@ -38,6 +38,10 @@ class LaravelRADServiceProvider extends ServiceProvider
         ], 'public');
 
         $this->publishes([
+            __DIR__.'/../../../routes' => base_path('routes'),
+        ], 'route');
+
+        $this->publishes([
             __DIR__.'/../../../app/Providers/RouteServiceProvider.php' => app_path('Providers/RouteServiceProvider.php'),
             __DIR__.'/../../../app/Model.php' => app_path('Model.php'),
             __DIR__.'/../../../app/Oauth.php' => app_path('Oauth.php'),
