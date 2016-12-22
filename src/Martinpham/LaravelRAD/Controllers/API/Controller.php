@@ -99,7 +99,7 @@ trait Controller
     {
         static $instance = null;
         if ($instance === null) {
-            $instance = new static(request(), response(), config());
+            $instance = new static(request(), response(), config(), cache());
         }
         return $instance;
     }
