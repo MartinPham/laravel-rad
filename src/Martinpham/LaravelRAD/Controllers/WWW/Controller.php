@@ -16,7 +16,7 @@ trait Controller
 {
     public $auth;
 
-    public function __construct(Request $request, ResponseFactory $responseFactory, AuthGuard $authGuard)
+    public function __construct(Request $request, ResponseFactory $responseFactory, AuthGuard $authGuard = null)
     {
         $this->request = $request;
         $this->respond = $responseFactory;

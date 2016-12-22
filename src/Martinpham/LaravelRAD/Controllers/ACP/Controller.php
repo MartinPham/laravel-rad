@@ -22,7 +22,7 @@ trait Controller
     public $auth;
     public $config;
 
-    public function __construct(Request $request, ResponseFactory $responseFactory, AuthGuard $authGuard, ConfigRepository $configRepository)
+    public function __construct(Request $request, ResponseFactory $responseFactory, AuthGuard $authGuard = null, ConfigRepository $configRepository = null)
     {
 
         parent::__construct($request, $responseFactory);

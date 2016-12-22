@@ -25,12 +25,12 @@ trait Controller
     public $user = false;
 
 
-    public function __construct(Request $request, ResponseFactory $responseFactory, ConfigRepository $configRepository)
+    public function __construct(Request $request, ResponseFactory $responseFactory, ConfigRepository $configRepository = null)
     {
         parent::__construct($request, $responseFactory);
 
 
-        if($request->get('tz') !== '')
+        if($configRepository != null && $request->get('tz') !== '')
         {
             $configRepository->set('app.timezone', $request->get('tz'));
         }
@@ -99,7 +99,7 @@ trait Controller
     {
         static $instance = null;
         if ($instance === null) {
-            $instance = new static(request(), response(), config(), cache());
+            $instance = new static(request(), response());
         }
         return $instance;
     }
