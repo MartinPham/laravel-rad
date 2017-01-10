@@ -17,13 +17,13 @@ trait OauthController
 
     public function oauthLogin($service)
     {
-        return Socialite::driver($service)->redirect();
+        return \Socialite::driver($service)->redirect();
     }
     public function oauthLoginCallback($service)
     {
-        $oaUserData = Socialite::driver($service)->user();
+        $oaUserData = \Socialite::driver($service)->user();
 
-        $user = Oauth::userFromOAuthUserData($service, $oaUserData);
+        $user = \App\Oauth::userFromOAuthUserData($service, $oaUserData);
 
         return view('soft_redirect', ['url' => \Config::get('app.app_url') . 'auth?token=' . $user->getAPIAuthToken()]);
     }
@@ -33,9 +33,9 @@ trait OauthController
 
         $token = $this->request->get('token');
 
-        $oaUserData = Socialite::driver($service)->userDataByToken($token);
+        $oaUserData = \Socialite::driver($service)->userDataByToken($token);
 //        dd($oaUserData);
-        $user = Oauth::userFromOAuthUserData($service, $oaUserData);
+        $user = \App\Oauth::userFromOAuthUserData($service, $oaUserData);
 
 
 //        $this->data = $user;
