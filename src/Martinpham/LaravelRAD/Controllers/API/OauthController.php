@@ -8,6 +8,7 @@
 
 namespace Martinpham\LaravelRAD\Controllers\API;
 
+use App\Oauth;
 
 trait OauthController
 {
@@ -23,7 +24,7 @@ trait OauthController
     {
         $oaUserData = \Socialite::driver($service)->user();
 
-        $user = \App\Oauth::userFromOAuthUserData($service, $oaUserData);
+        $user = Oauth::userFromOAuthUserData($service, $oaUserData);
 
         return view('soft_redirect', ['url' => \Config::get('app.app_url') . 'auth?token=' . $user->getAPIAuthToken()]);
     }
@@ -35,7 +36,7 @@ trait OauthController
 
         $oaUserData = \Socialite::driver($service)->userDataByToken($token);
 //        dd($oaUserData);
-        $user = \App\Oauth::userFromOAuthUserData($service, $oaUserData);
+        $user = Oauth::userFromOAuthUserData($service, $oaUserData);
 
 
 //        $this->data = $user;

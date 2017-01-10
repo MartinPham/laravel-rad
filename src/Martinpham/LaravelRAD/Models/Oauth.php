@@ -14,18 +14,9 @@ use Martinpham\LaravelRAD\Exceptions\InvalidOauthUserId;
 
 trait Oauth
 {
-
-    protected $hidden = [
-        'created_at', 'updated_at'
-    ];
-
-    protected $fillable = [
-        'service', 'oaid'
-    ];
-
     public function user()
     {
-        return $this->belongsTo(App\User::class);
+        return $this->belongsTo(\App\User::class);
     }
 
     public static function userFromOAuthUserData($service, $oAuthUserData)
@@ -40,11 +31,11 @@ trait Oauth
             'oaid' => $oaID,
         ];
 
-        $oaUser = Oauth::where($oaUserDetail)->first();
+        $oaUser = self::where($oaUserDetail)->first();
 
         if(!$oaUser)
         {
-            $oaUser = Oauth::create($oaUserDetail);
+            $oaUser = self::create($oaUserDetail);
         }
 
         $oaUser->data = $oAuthUserData;
@@ -63,7 +54,7 @@ trait Oauth
             $userDetail = [
                 'email' => $oaEmail
             ];
-            $user = User::where($userDetail)->first();
+            $user = \App\User::where($userDetail)->first();
             if(!$user)
             {
                 $user = new \App\User;
