@@ -32,7 +32,7 @@ trait OauthController
     public function oauth2TokenLogin($service)
     {
 
-        $token = $this->request->get('token');
+        $token = $this->request->input('token');
 
         $oaUserData = \Socialite::driver($service)->userDataByToken($token);
 //        dd($oaUserData);
