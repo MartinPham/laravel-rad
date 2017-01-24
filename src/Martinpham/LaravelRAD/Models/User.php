@@ -28,7 +28,7 @@ trait User
 
     public function oauths()
     {
-        return $this->hasMany(App\Oauth::class);
+        return $this->hasMany(\App\Oauth::class);
     }
 
 
