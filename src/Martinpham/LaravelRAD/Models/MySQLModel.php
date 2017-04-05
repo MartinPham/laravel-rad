@@ -8,10 +8,11 @@
 
 namespace Martinpham\LaravelRAD\Models;
 
+use Carbon\Carbon;
 
-
-trait Model
+trait MySQLModel
 {
+
 
 }
 
