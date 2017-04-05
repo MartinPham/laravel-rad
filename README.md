@@ -1,6 +1,6 @@
 # Laravel RAD components
 
-- MongoDB
+- MongoDB/MySQL
 - View with helpers
 - Controller with helpers
 - ACP with Auth, Recaptcha, S3, CRUD example
