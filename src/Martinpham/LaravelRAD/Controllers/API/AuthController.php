@@ -48,6 +48,7 @@ trait AuthController
         $input['email'] = strtolower($input['email']);
         $input['password'] = $hasher->make($input['password']);
 
+
         $check = User::findByEmail($input['email']);
         if($check)
         {
@@ -58,11 +59,19 @@ trait AuthController
             ));
         }
 
-        $user = User::create($input);
+        $data = [
+            User::FIELD_EMAIL => $input['email'],
+            User::FIELD_PASSWORD => $input['password'],
+            User::FIELD_FIRST_NAME => $input['name'],
+            User::FIELD_LAST_NAME => $input['surname']
+        ];
+
+
+        $user = User::create($data);
 
         $user->updateAvatar(@$input['avatar']);
 
-        $user->activated = false;
+        $user->{User::FIELD_ACTIVATED} = false;
         $user->save();
 
         $user->sendActivationEmail();
@@ -136,6 +145,8 @@ trait AuthController
         }
 
 //        return $this->respond(['data' => $input]);
+
+
         $user = User::login($input['email'], $input['password']);
         if(!$user)
         {
@@ -276,7 +287,7 @@ trait AuthController
 
 
 
-        $user->password = $hasher->make($input['password']);
+        $user->{User::FIELD_PASSWORD} = $hasher->make($input['password']);
         $user->save();
 
 

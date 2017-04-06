@@ -87,8 +87,9 @@ trait Controller
             $vid = $this->id . '.' . $vid;
         }
 
-        $vid = str_replace("\\", '.', $vid);
 
+
+        $vid = str_replace("\\", '.', $vid);
 
         return view()->make($this->viewDir . '.' . $vid, $this->data);
     }

@@ -8,7 +8,9 @@
 
 namespace Martinpham\LaravelRAD\Controllers\ACP;
 
+use App\User;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Illuminate\Http\Request;
 
 trait LoginController
 {
@@ -35,6 +37,7 @@ trait LoginController
     {
         return $this->view();
     }
+
 
     protected function validateLogin($request)
     {

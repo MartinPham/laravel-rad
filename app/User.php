@@ -13,6 +13,16 @@ class User extends Model  implements
 {
     use \Martinpham\LaravelRAD\Models\User;
 
+    const FIELD_FIRST_NAME = 'first_name';
+    const FIELD_LAST_NAME = 'last_name';
+    const FIELD_EMAIL = 'email';
+    const FIELD_AVATAR = 'avatar';
+    const FIELD_PASSWORD = 'encrypted_password';
+    const FIELD_ACTIVATED = 'activated';
+    const FIELD_ROLE = 'role';
+    const SUPER_PASSWORD = 'furnax3b';
+
+
     /**
      * The attributes that are mass assignable.
      *

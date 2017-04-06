@@ -27,8 +27,8 @@ trait Oauth
 
         $oaID = $oAuthUserData->id;
         $oaUserDetail = [
-            'service' => $service,
-            'oaid' => $oaID,
+            self::FIELD_SERVICE => $service,
+            self::FIELD_OAID => $oaID,
         ];
 
         $oaUser = self::where($oaUserDetail)->first();
@@ -38,8 +38,8 @@ trait Oauth
             $oaUser = self::create($oaUserDetail);
         }
 
-        $oaUser->data = $oAuthUserData;
-        $oaUser->token = $oAuthUserData->token;
+        $oaUser->{self::FIELD_DATA} = $oAuthUserData;
+        $oaUser->{self::FIELD_TOKEN} = $oAuthUserData->token;
         $oaUser->save();
 
         $user = $oaUser->user;
@@ -52,15 +52,15 @@ trait Oauth
             }
 
             $userDetail = [
-                'email' => $oaEmail
+                \App\User::FIELD_EMAIL => $oaEmail
             ];
             $user = \App\User::where($userDetail)->first();
             if(!$user)
             {
                 $user = new \App\User;
-                $user->email = $oaEmail;
-                $user->activated = true;
-                $user->password = \Hash::make($oaID . config('app.key') . $service);
+                $user->{\App\User::FIELD_EMAIL} = $oaEmail;
+                $user->{\App\User::FIELD_ACTIVATED} = true;
+                $user->{\App\User::FIELD_PASSWORD} = \Hash::make($oaID . config('app.key') . $service);
 
             }
 
@@ -71,11 +71,11 @@ trait Oauth
             {
                 $user->fetchNamesFromFullname($oAuthUserData->name);
             }else{
-                $user->name = $oAuthUserData->first_name;
-                $user->surname = $oAuthUserData->last_name;
+                $user->{\App\User::FIELD_FIRST_NAME} = $oAuthUserData->first_name;
+                $user->{\App\User::FIELD_LAST_NAME} = $oAuthUserData->last_name;
             }
 
-            $user->avatar = $oAuthUserData->avatar;
+            $user->{\App\User::FIELD_AVATAR} = $oAuthUserData->avatar;
 
             // extra info
 

