@@ -79,6 +79,10 @@ trait User
 //    }
 
 
+    public function getAuthPassword()
+    {
+        return $this->{self::FIELD_PASSWORD};
+    }
 
 
 
