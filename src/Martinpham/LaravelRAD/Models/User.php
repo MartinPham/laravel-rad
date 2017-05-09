@@ -140,7 +140,7 @@ trait User
 
 //        dd($email, $password);
 
-        $result = auth()->attempt([self::FIELD_EMAIL => strtolower($email), self::FIELD_PASSWORD => $password, 'activated' => true]);
+        $result = auth()->attempt([self::FIELD_EMAIL => strtolower($email), 'password' => $password, 'activated' => true]);
 
 //        var_dump($result);die;
 
