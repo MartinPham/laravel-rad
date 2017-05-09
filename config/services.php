@@ -51,7 +51,7 @@ return [
     ],
 
     'firebase' => [
-        'database_url' => 'https://fir-1-b7a49.firebaseio.com',
-        'secret' => 'cefWGVH5c6i1g0j6kV10PRPLJ9G55ltTxLnOUx9i'
+        'database_url' => '',
+        'secret' => ''
     ]
 ];

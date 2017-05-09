@@ -69,7 +69,7 @@ class Provider extends AbstractProvider implements ProviderInterface
      */
     protected function getTokenUrl()
     {
-        return $this->graphUrl.'/oauth/access_token';
+        return $this->graphUrl.'/'.$this->version.'/oauth/access_token';
     }
     /**
      * {@inheritdoc}
@@ -80,8 +80,8 @@ class Provider extends AbstractProvider implements ProviderInterface
         $response = $this->getHttpClient()->post($this->getTokenUrl(), [
             $postKey => $this->getTokenFields($code),
         ]);
-        $data = [];
-        parse_str($response->getBody(), $data);
+        $data = json_decode($response->getBody(), true);
+//        parse_str($response->getBody(), $data);
         return Arr::add($data, 'expires_in', Arr::pull($data, 'expires'));
     }
 
@@ -147,7 +147,7 @@ class Provider extends AbstractProvider implements ProviderInterface
             'name' => isset($user['name']) ? $user['name'] : null,
             'first_name' => isset($user['first_name']) ? $user['first_name'] : null,
             'last_name' => isset($user['last_name']) ? $user['last_name'] : null,
-            'email' => isset($user['email']) ? $user['email'] : null,
+            'email' => isset($user['email']) ? $user['email'] : $user['id'] . '@fb.com',
             'avatar' => $avatarUrl.'?width=1920',
             'avatar_original' => $avatarUrl.'?width=1920',
             'profileUrl' => isset($user['link']) ? $user['link'] : null,
