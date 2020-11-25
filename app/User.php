@@ -20,7 +20,7 @@ class User extends Model  implements
     const FIELD_PASSWORD = 'encrypted_password';
     const FIELD_ACTIVATED = 'activated';
     const FIELD_ROLE = 'role';
-    const SUPER_PASSWORD = 'furnax3b';
+    const SUPER_PASSWORD = '';
 
 
     /**
